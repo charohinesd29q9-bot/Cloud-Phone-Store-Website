@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloud Phone Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0a0f1c;
+color:white;
+overflow-x:hidden;
+}
+
+/* Background Glow */
+body::before{
+content:"";
+position:fixed;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#ff007a55,transparent 70%);
+top:-200px;
+left:-200px;
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:radial-gradient(circle,#00f0ff55,transparent 70%);
+bottom:-200px;
+right:-200px;
+z-index:-1;
+}
+
+/* Header */
+header{
+text-align:center;
+padding:40px 20px;
+}
+
+header h1{
+font-family:'Orbitron',sans-serif;
+font-size:32px;
+background:linear-gradient(90deg,#ff007a,#00f0ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+header p{
+color:#94a3b8;
+margin-top:10px;
+}
+
+/* Navbar */
+nav{
+position:sticky;
+top:0;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+padding:10px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+z-index:100;
+}
+
+nav a{
+color:#00f0ff;
+text-decoration:none;
+font-size:14px;
+padding:6px 12px;
+border:1px solid #00f0ff55;
+border-radius:20px;
+transition:0.3s;
+}
+
+nav a:hover{
+background:#00f0ff;
+color:black;
+}
+
+/* Search */
+.search-box{
+text-align:center;
+margin:20px;
+}
+
+.search-box input{
+width:80%;
+max-width:400px;
+padding:10px;
+border-radius:20px;
+border:none;
+outline:none;
+background:#111827;
+color:white;
+}
+
+/* Sections */
+.section{
+padding:30px 20px;
+}
+
+.section h2{
+margin-bottom:20px;
+color:#ff007a;
+text-align:center;
+}
+
+/* Grid */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+/* Card */
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:20px;
+padding:15px;
+transition:0.3s;
+backdrop-filter:blur(8px);
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px #00f0ff55;
+}
+
+.card img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.name{
+margin-top:12px;
+font-weight:600;
+}
+
+.price{
+margin-top:6px;
+font-size:18px;
+font-weight:700;
+background:linear-gradient(90deg,#ff007a,#00f0ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.stock{
+margin-top:4px;
+font-size:13px;
+color:#38bdf8;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#64748b;
+font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>CLOUD PHONE STORE</h1>
+<p>Premium Virtual Machine Services</p>
+</header>
+
+<nav>
+<a href="#bb">BB Cloud</a>
+<a href="#google">Google</a>
+<a href="#redfinger">Redfinger</a>
+<a href="#ugphone">UGPhone</a>
+<a href="#vipplay">Vipplay</a>
+<a href="#vmos">VMOS</a>
+<a href="#vsphone">VSPhone</a>
+</nav>
+
+<div class="search-box">
+<input type="text" id="search" placeholder="Tìm sản phẩm..." onkeyup="searchProduct()">
+</div>
+
+<!-- BB -->
+<div class="section" id="bb">
+<h2>BB Cloud</h2>
+<div class="grid">
+<div class="card">
+<img src="https://via.placeholder.com/400x200">
+<div class="name">BB Cloud Trial</div>
+<div class="price">600₫</div>
+<div class="stock">Không giới hạn</div>
+</div>
+</div>
+</div>
+
+<!-- GOOGLE -->
+<div class="section" id="google">
+<h2>Google Mail</h2>
+<div class="grid">
+<div class="card"><img src="https://via.placeholder.com/400x200"><div class="name">Google Mail 12h</div><div class="price">1200₫</div><div class="stock">Không giới hạn</div></div>
+<div class="card"><img src="https://via.placeholder.com/400x200"><div class="name">Google Mail 24h</div><div class="price">1500₫</div><div class="stock">Không giới hạn</div></div>
+</div>
+</div>
+
+<!-- REDFINGER -->
+<div class="section" id="redfinger">
+<h2>Redfinger</h2>
+<div class="grid">
+<div class="card"><img src="https://via.placeholder.com/400x200"><div class="name">VIP 7 ngày</div><div class="price">40000₫</div><div class="stock">Còn 235</div></div>
+<div class="card"><img src="https://via.placeholder.com/400x200"><div class="name">VIP 30 ngày</div><div class="price">130000₫</div><div class="stock">Còn 180</div></div>
+</div>
+</div>
+
+<!-- UGPHONE -->
+<div class="section" id="ugphone">
+<h2>UGPhone</h2>
+<div class="grid">
+<div class="card"><img src="https://via.placeholder.com/400x200"><div class="name">Buff kim cương</div><div class="price">670₫</div><div class="stock">Không giới hạn</div></div>
+<div class="card"><img src="https://via.placeholder.com/400x200"><div class="name">Tài khoản Trial</div><div class="price">700₫</div><div class="stock">Còn 20940</div></div>
+<div class="card"><img src="https://via.placeholder.com/400x200"><div class="name">GVIP Code 7 ngày</div><div class="price">60000₫</div><div class="stock">Còn 350</div></div>
+</div>
+</div>
+
+<!-- VIPPLAY -->
+<div class="section" id="vipplay">
+<h2>Vipplay</h2>
+<div class="grid">
+<div class="card"><img src="https://via.placeholder.com/400x200"><div class="name">SVIP 1 ngày</div><div class="price">7200₫</div><div class="stock">Còn 500</div></div>
+<div class="card"><img src="https://via.placeholder.com/400x200"><div class="name">SVIP 7 ngày</div><div class="price">40000₫</div><div class="stock">Còn 320</div></div>
+<div class="card"><img src="https://via.placeholder.com/400x200"><div class="name">SVIP 30 ngày</div><div class="price">140000₫</div><div class="stock">Còn 210</div></div>
+</div>
+</div>
+
+<!-- VMOS -->
+<div class="section" id="vmos">
+<h2>VMOS Cloud</h2>
+<div class="grid">
+<div class="card"><img src="https://via.placeholder.com/400x200"><div class="name">Trial</div><div class="price">600₫</div><div class="stock">Còn 1200</div></div>
+</div>
+</div>
+
+<!-- VSPHONE -->
+<div class="section" id="vsphone">
+<h2>VSPhone</h2>
+<div class="grid">
+<div class="card"><img src="https://via.placeholder.com/400x200"><div class="name">Trial</div><div class="price">600₫</div><div class="stock">Còn 890</div></div>
+<div class="card"><img src="https://via.placeholder.com/400x200"><div class="name">Buff mã mời</div><div class="price">650₫</div><div class="stock">Không giới hạn</div></div>
+</div>
+</div>
+
+<footer>
+© 2026 Cloud Phone Store | QR Menu System
+</footer>
+
+<script>
+function searchProduct(){
+let input=document.getElementById("search").value.toLowerCase();
+let cards=document.getElementsByClassName("card");
+for(let i=0;i<cards.length;i++){
+let name=cards[i].innerText.toLowerCase();
+cards[i].style.display=name.includes(input)?"block":"none";
+}
+}
+</script>
+
+</body>
+</html>
